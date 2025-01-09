@@ -1,0 +1,123 @@
+/* 초기화 + 세팅 + 변수 */
+
+:root{
+	--view_width: 1440;
+	--window_width: 100vw;
+}
+
+/* 초가화 */
+
+*{margin:0;padding:0;font:inherit;color:inherit;border: 0;box-sizing: border-box;}
+*, :after, :before {
+    box-sizing:border-box;
+    /*패딩 보더*/
+}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+button {background:none;border:0;cursor:pointer;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+fieldset, input{
+    border: 0;
+}
+ul{list-style: none;}
+
+
+body{
+	background-color: #3e2b2c;
+	color: #d1ccbf;
+	overflow-x: hidden;
+	font-family: 'Basis Grotesque', 'PRETENDARD', sans-serif;
+	font-size: calc(20/var(--vw)*var(--multiplier));
+	font-weight: 400;
+	line-height: 1;
+	min-width: 1520px;
+}
+
+input{
+	outline: none;
+	accent-color: #3e2b2c;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0; 
+    height: 0; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+@media (max-width: 1500px) {
+    ::-webkit-scrollbar {
+		width: 10px; 
+        height: 10px; 
+    }
+}
+
+
+/* font */
+@font-face{
+	font-family:'Basis Grotesque';
+	font-weight:300;
+	src: url(../fonts/BasisGrotesqueArabicPro-Light.woff2) format('woff2');
+}
+@font-face{
+	font-family:'Basis Grotesque';
+	font-weight:600;
+	src: url(../fonts/BasisGrotesqueArabicPro-Medium.woff2) format('woff2');
+}
+@font-face{
+	font-family:'Basis Grotesque';
+	font-weight:400;
+	src: url(../fonts/BasisGrotesqueArabicPro-Regular.woff2) format('woff2');
+}
+@font-face{
+	font-family:'Basis Grotesque';
+	font-weight:700;
+	src: url(../fonts/BasisGrotesqueArabicPro-Bold.woff2) format('woff2');
+}
+@font-face{
+	font-family:'Basis Grotesque';
+	font-weight:700;
+	src: url(../fonts/BasisGrotesqueArabicPro-Black.woff2) format('woff2');
+}
+
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:800;
+	src: url(../fonts/Pretendard-Bold.woff2);
+}
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:700;
+	src: url(../fonts/Pretendard-SemiBold.woff2);
+}
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:600;
+	src: url(../fonts/Pretendard-Medium.woff2);
+}
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:500;
+	src: url(../fonts/Pretendard-Regular.woff2);
+}
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:300;
+	src: url(../fonts/Pretendard-Light.woff2);
+}
+@font-face{
+	font-family:'PRETENDARD';
+	font-weight:200;
+	src: url(../fonts/Pretendard-Thin.woff2);
+}
