@@ -394,7 +394,6 @@ const innovationTl = gsap.timeline({
         }
     }
 })
-
 innovationTl.to(".thumub_01 .i", {
   'clip-path': 'inset(0% 0% 100% 0%)',
   stagger:0.1,
@@ -412,14 +411,8 @@ innovationTl.to(".current_wrap", {
   duration: 4,
 },'a')
 
-
 innovationTl.to(".thumub_02 .i", {
-  'clip-path': 'inset(0% 0% 0% 0%)',
-  stagger:0.1,
-  duration: 1.5,
-},"b")
-innovationTl.to(".thumub_02 .i", {
-  'clip-path': 'inset(100% 0% 0% 0%)',
+  'clip-path': 'inset(0% 0% 100% 0%)',
   stagger:0.1,
   duration: 1.5,
 },"b")
@@ -433,12 +426,7 @@ innovationTl.to(".current_wrap", {
 },'b')
 
 innovationTl.to(".thumub_03 .i", {
-  'clip-path': 'inset(0% 0% 0% 0%)',
-  stagger:0.1,
-  duration: 1.5,
-},"c")
-innovationTl.to(".thumub_03 .i", {
-  'clip-path': 'inset(100% 0% 0% 0%)',
+  'clip-path': 'inset(0% 0% 100% 0%)',
   stagger:0.1,
   duration: 1.5,
 },"c")
@@ -452,12 +440,7 @@ innovationTl.to(".current_wrap", {
 },'c')
 
 innovationTl.to(".thumub_04 .i", {
-  'clip-path': 'inset(0% 0% 0% 0%)',
-  stagger:0.1,
-  duration: 1.5,
-},"d")
-innovationTl.to(".thumub_04 .i", {
-  'clip-path': 'inset(100% 0% 0% 0%)',
+  'clip-path': 'inset(0% 0% 100% 0%)',
   stagger:0.1,
   duration: 1.5,
 },"d")
