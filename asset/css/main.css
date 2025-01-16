@@ -2220,8 +2220,6 @@
     .sc_sustain .sustain_desc h4{
         font-size: calc(14/var(--view_width)*var(--window_width));
     }
-}
-@media (max-width: 480px){
     .sc_innovation{
         display: none;
     }
