@@ -30,7 +30,6 @@ body{
 	font-size: calc(20/var(--vw)*var(--multiplier));
 	font-weight: 400;
 	line-height: 1;
-	min-width: 1520px;
 }
 
 input{

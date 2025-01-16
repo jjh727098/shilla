@@ -22,3 +22,13 @@
     column-gap: calc(24/var(--vw)*var(--multiplier));
     grid-template-columns: repeat(12,1fr);
 }
+
+@media (max-width: 900px){  
+	:root{
+        --view_width: 375;
+    }
+    .inner{
+        column-gap: calc(16/var(--vw)*var(--multiplier));
+        grid-template-columns: repeat(4,1fr);
+    }
+}

@@ -119,11 +119,15 @@ fullscreenBtn.addEventListener("click", () => {
 // 메뉴버튼 클릭시 모달창 
 $('.menu_box').click(function(){
   $('.group_aside').addClass('open');
-  $('body').css('overflow','hidden');
+    
+  // Lenis 스크롤 비활성화
+  lenis.stop(); 
 })
 $('.close_btn_box').click(function(){
   $('.group_aside').removeClass('open');
-  $('body').css('overflow','auto');
+
+  // Lenis 스크롤 활성화
+  lenis.start(); 
 })
 
 // 마우스 이벤트
@@ -205,19 +209,23 @@ $('.group_cursor').click(function () {
   }
 });
 
-// parallax_thumb 공통영역
-const story_v2Tl = gsap.timeline({
-  scrollTrigger: {
-      trigger: ".sc_story_v2",
-      start: "0% 0%",
-      end: "100% 100%",
-      scrub: true,
-      //markers: true,
-      ease:'Power4'
-  }
-})
-story_v2Tl.from(".parallax_thumb_box img",{y:-200});
-story_v2Tl.to(".parallax_thumb_box img",{y:200});
+// 900px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 901px)").matches) {
+
+  const story_v2Tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".sc_story_v2",
+        start: "0% 0%",
+        end: "100% 100%",
+        scrub: true,
+        //markers: true,
+        ease:'Power4'
+    }
+  })
+  story_v2Tl.from(".parallax_thumb_box img",{y:-200});
+  story_v2Tl.to(".parallax_thumb_box img",{y:200});
+
+}
 
 // visual 타임라인
 gsap.registerPlugin(ScrollTrigger);
@@ -240,36 +248,46 @@ visualTl.to(".sc_visual .mask_area .bar",{
   },
 },'a');
 
-// story 타임라인
-$('[data-scroll="parent"]').each(function(){
-  const storyTl = gsap.timeline({
+// 900px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 901px)").matches) {
+
+  // parallax 공통영역
+  $('[data-scroll="parent"]').each(function(){
+    const storyTl = gsap.timeline({
+      scrollTrigger: {
+          trigger: $(this),
+          start: "0% 100%",
+          end: "bottom 0%",
+          scrub: true,
+          ease:'Power4',
+          // markers: true,
+      }
+    })
+    storyTl.from($(this).find('[data-scroll="img"]'),{y:-130});
+    storyTl.to($(this).find('[data-scroll="img"]'),{y:130});
+  })
+
+}
+
+// 900px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 901px)").matches) {
+
+  // join 타임라인
+  const joinTl = gsap.timeline({
     scrollTrigger: {
-        trigger: $(this),
-        start: "0% 100%",
-        end: "bottom 0%",
+        trigger: ".sc_join",
+        start: "0% 20%",
+        endTrigger:"#footer",
+        end: "100% 100%",
         scrub: true,
-        ease:'Power4',
-        // markers: true,
+        //markers: true,
+        ease:'easeIn'
     }
   })
-  storyTl.from($(this).find('[data-scroll="img"]'),{y:-130});
-  storyTl.to($(this).find('[data-scroll="img"]'),{y:130});
-})
+  joinTl.from(".join_thumb_box img",{y:-200});
+  joinTl.to(".join_thumb_box img",{y:200});
 
-// join 타임라인
-const joinTl = gsap.timeline({
-  scrollTrigger: {
-      trigger: ".sc_join",
-      start: "0% 20%",
-      endTrigger:"#footer",
-      end: "100% 100%",
-      scrub: true,
-      //markers: true,
-      ease:'easeIn'
-  }
-})
-joinTl.from(".join_thumb_box img",{y:-200});
-joinTl.to(".join_thumb_box img",{y:200});
+}
 
 // sustain 타임라인
 const sustainTl = gsap.timeline({
