@@ -10,6 +10,22 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
+// 이전 화면 너비를 저장할 변수
+let previousWidth = $(window).width();
+
+// 창 크기 변경 이벤트 감지
+$(window).resize(function() {
+    let currentWidth = $(window).width();
+
+    // 이전 너비와 현재 너비가 다르고 현재 너비가 900 이하일 경우 새로고침
+    if (previousWidth !== currentWidth && currentWidth <= 900) {
+        location.reload();
+    }
+
+    // 이전 너비를 업데이트
+    previousWidth = currentWidth;
+});
+
 // 로딩화면
 const paths = document.querySelectorAll(".loading-container svg path"); // 모든 path 요소 선택
 
