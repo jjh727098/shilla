@@ -465,6 +465,7 @@ body.fix #header{display: none;}
     #footer .menu_list{
         grid-column: 1/3;
         gap: calc(24/var(--view_width)*var(--window_width));
+        line-height: .3;
     }
     #footer .contact_box.mo{
         display: flex;
@@ -494,10 +495,10 @@ body.fix #header{display: none;}
         margin-top: 0;
     }
     #footer .community_item a{
-        font-size: calc(25/var(--view_width)*var(--window_width));    
+        font-size: calc(18/var(--view_width)*var(--window_width));    
     }
     #footer .menu_item a{
-        font-size: calc(25/var(--view_width)*var(--window_width));   
+        font-size: calc(18/var(--view_width)*var(--window_width));   
     }    
     #footer .sns_list{
         gap: calc(32/var(--view_width)*var(--window_width));
