@@ -10,27 +10,23 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
-// 이전 화면 너비를 저장할 변수
+ // 창 크기에 따른 새로고침
 let previousWidth = $(window).width();
 
-// 창 크기 변경 이벤트 감지
 $(window).resize(function() {
     let currentWidth = $(window).width();
 
-    // 이전 너비와 현재 너비가 다르고 현재 너비가 900 이하일 경우 새로고침
     if (previousWidth !== currentWidth && currentWidth <= 900) {
         location.reload();
     }
 
-    // 이전 너비를 업데이트
     previousWidth = currentWidth;
 });
 
 // 로딩화면
-const paths = document.querySelectorAll(".loading-container svg path"); // 모든 path 요소 선택
+const paths = document.querySelectorAll(".loading-container svg path"); 
 
-// 로딩 중 Lenis 스크롤 비활성화
-lenis.stop(); // Lenis 스크롤 멈춤
+lenis.stop(); 
 
 const timeline = gsap.timeline({
   defaults: {
@@ -39,7 +35,6 @@ const timeline = gsap.timeline({
   }
 });
 
-// 각 글자 애니메이션
 paths.forEach((path, index) => {
   timeline.fromTo(
     path,
@@ -49,16 +44,12 @@ paths.forEach((path, index) => {
   );
 });
 
-// 전체 글자 유지
 timeline.to(paths, { opacity: 1, duration: 3 }, "+=0");
 
-// 글자 색상 흰색으로 변경
 timeline.to(paths, { fill: "white", duration: 0.5 });
 
-// 1초 멈춤
 timeline.to({}, { duration: 1 });
 
-// 배경색과 로딩 종료
 timeline.to(paths, { opacity: 0, y: (i) => (i % 2 === 0 ? 30 : -30), duration: 0.5 });
 timeline.to(".loading-container", { backgroundColor: "#3e2b2c", duration: 0.5 }, "<");
 timeline.to(".loading-container", {
@@ -67,7 +58,6 @@ timeline.to(".loading-container", {
   onComplete: () => {
     document.querySelector(".loading-container").style.display = "none";
 
-    // Lenis 스크롤 다시 활성화
     lenis.start();
   }
 });
@@ -107,13 +97,11 @@ const headerTl = gsap.timeline({
 const video = document.getElementById("main_player");
 const progressBar = document.querySelector(".progress");
 
-// 영상의 현재 진행 상태를 업데이트
 video.addEventListener("timeupdate", () => {
   const progress = (video.currentTime / video.duration) * 100;
   gsap.to(progressBar, { width: `${progress}%`, duration: 0.1 });
 });
 
-// 진행 바 클릭으로 영상 위치 변경
 const progressArea = document.querySelector(".progress_area");
 progressArea.addEventListener("click", (e) => {
   const rect = progressArea.getBoundingClientRect();
@@ -122,7 +110,6 @@ progressArea.addEventListener("click", (e) => {
   video.currentTime = newTime;
 });
 
-// 전체 화면 토글
 const fullscreenBtn = document.querySelector(".fullscreen_btn");
 fullscreenBtn.addEventListener("click", () => {
   if (!document.fullscreenElement) {
@@ -505,10 +492,8 @@ $('.aside_container .menu_item a').mouseenter(function() {
 
   const $thumbList = $('.aside_thumb_list');
   
-  // 새로운 요소 추가
   $thumbList.append(html);
 
-  // 자식 요소가 5개를 초과하면 첫 번째 요소 제거
   if ($thumbList.children().length > 15) {
     $thumbList.children().first().remove();
   }
@@ -525,10 +510,8 @@ $('.sc_sustain .group_btn a').mouseenter(function() {
 
   const $thumbList = $('.sustain_thumb_area');
 
-  // 새로운 요소 추가
   $thumbList.append(html);
 
-  // 자식 요소가 5개를 초과하면 첫 번째 요소 제거
   if ($thumbList.children().length > 15) {
     $thumbList.children().first().remove();
   }
