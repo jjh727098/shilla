@@ -212,8 +212,8 @@ $('.group_cursor').click(function () {
   }
 });
 
-// 900px 이하일 때 스크립트 실행 안 함
-if (window.matchMedia("(min-width: 901px)").matches) {
+// 1300px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 1300px)").matches) {
 
   const story_v2Tl = gsap.timeline({
     scrollTrigger: {
@@ -251,8 +251,8 @@ visualTl.to(".sc_visual .mask_area .bar",{
   },
 },'a');
 
-// 900px 이하일 때 스크립트 실행 안 함
-if (window.matchMedia("(min-width: 901px)").matches) {
+// 1300px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 1300px)").matches) {
 
   // parallax 공통영역
   $('[data-scroll="parent"]').each(function(){
@@ -272,8 +272,8 @@ if (window.matchMedia("(min-width: 901px)").matches) {
 
 }
 
-// 900px 이하일 때 스크립트 실행 안 함
-if (window.matchMedia("(min-width: 901px)").matches) {
+// 1300px 이하일 때 스크립트 실행 안 함
+if (window.matchMedia("(min-width: 1300px)").matches) {
 
   // join 타임라인
   const joinTl = gsap.timeline({
