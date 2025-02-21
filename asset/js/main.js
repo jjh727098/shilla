@@ -302,7 +302,6 @@ const sustainTl = gsap.timeline({
       //markers: true,
   }
 })
-sustainTl.from(".sc_sustain .group_marquee",{xPercent:-10});
 
 // innovation 타임라인
 

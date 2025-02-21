@@ -1230,8 +1230,9 @@
     font-weight: 300;
     grid-column: 1/13;
     letter-spacing: -.02em;
-    line-height: 1;
+    line-height: 1.2;
     padding-bottom: calc(104/var(--view_width)*var(--window_width));
+    overflow: hidden;
 }
 .sc_sustain .marquee_area{
     display: flex;
