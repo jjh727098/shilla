@@ -1242,6 +1242,7 @@
 
     width: max-content;
     animation: marquee 50s linear infinite alternate;
+    overflow: hidden;
 }
 .sc_sustain .marquee_item{
     display: inline-block;
