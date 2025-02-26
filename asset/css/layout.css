@@ -37,7 +37,7 @@ body.fix #header{display: none;}
     top: 0;
 
     color: #fff;
-    transition: background-color .6s cubic-bezier(.24,.43,.15,.97) .1s,color .6s cubic-bezier(.24,.43,.15,.97) .1s,transform .8s cubic-bezier(.24,.43,.15,.97);
+    transition: background-color .6s .1s,color .6s .1s,transform .8s;
     width: 100%;
     z-index: 9999;
 }
@@ -49,7 +49,7 @@ body.fix #header{display: none;}
     position: relative;
 
     padding: calc(33/var(--view_width)*var(--window_width)) calc(64/var(--view_width)*var(--window_width));
-    transition: padding .6s cubic-bezier(.24,.43,.15,.97) .1s;
+    transition: padding .6s .1s;
 }
 #header .logo{
     display: flex;
@@ -113,7 +113,7 @@ body.fix #header{display: none;}
     pointer-events: none;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97);
+    transition: transform .8s;
     width: 100%;
 }
 
@@ -146,7 +146,7 @@ body.fix #header{display: none;}
     text-wrap: nowrap;
 }
 #header .join_btn_box .btn_stroke{
-    transition: stroke-dashoffset .8s cubic-bezier(.24,.43,.15,.97);
+    transition: stroke-dashoffset .8s;
     transition-delay: .3s;
     stroke: #fff;
     stroke-linecap: square !important;
@@ -207,20 +207,20 @@ body.fix #header{display: none;}
     background-color: #fff;
     height: 1px;
     transform-origin: right;
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97) 0s;
+    transition: transform .8s 0s;
     width: 100%;
 }
 #header .menu_box:hover .menu_wrap .line{
     transform: translate(170%);
 }
 #header .menu_wrap .line:first-child{
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97) 0s;
+    transition: transform .8s  0s;
 }
 #header .menu_wrap .line:nth-child(2){
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97) .15s;
+    transition: transform .8s .15s;
 }
 #header .menu_wrap .line:last-child{
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97) .3s;
+    transition: transform .8s .3s;
 }
 #header .menu_wrap .line::before{
     content: "";
@@ -310,7 +310,7 @@ body.fix #header{display: none;}
     height: 1px;
     pointer-events: none;
     transform-origin: right;
-    transition: transform .8s cubic-bezier(.24,.43,.15,.97);
+    transition: transform .8s;
     width: 100%;
 }
 #footer .menu_item a.active::before{

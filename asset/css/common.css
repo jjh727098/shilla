@@ -19,7 +19,7 @@
 }
 .inner{
     display: grid;
-    column-gap: calc(24/var(--vw)*var(--multiplier));
+    column-gap: calc(24/var(--view_width)*var(--window_width));
     grid-template-columns: repeat(12,1fr);
 }
 
@@ -28,7 +28,7 @@
         --view_width: 375;
     }
     .inner{
-        column-gap: calc(16/var(--vw)*var(--multiplier));
+        column-gap: calc(16/var(--view_width)*var(--window_width));
         grid-template-columns: repeat(4,1fr);
     }
 }
