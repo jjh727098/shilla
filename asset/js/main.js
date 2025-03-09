@@ -10,19 +10,6 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
- // 창 크기에 따른 새로고침
-let previousWidth = $(window).width();
-
-$(window).resize(function() {
-    let currentWidth = $(window).width();
-
-    if (previousWidth !== currentWidth && currentWidth <= 900) {
-        location.reload();
-    }
-
-    previousWidth = currentWidth;
-});
-
 // 로딩화면
 const paths = document.querySelectorAll(".loading-container svg path"); 
 
